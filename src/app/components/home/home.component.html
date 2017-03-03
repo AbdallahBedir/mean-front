@@ -1,0 +1,42 @@
+<div class="home">
+  <!--<div class="background-img"></div>-->
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="content" [@mainContent]>
+                <div class="title">
+                    <h1><span>MEAN</span> AUTHENTICATION APP</h1>
+                </div>
+                <div class="caption">
+                    <p>Welcome to our custom MEAN authentication app built from scratch</p>
+                </div>
+                <div class="auth-buttons">
+                    <button [hidden]="_authService.isLoggedIn()" [routerLink]="['/Register']" class="hvr-shutter-out-vertical">Register</button>
+                    <button [hidden]="_authService.isLoggedIn()" [routerLink]="['/Login']" class="nile hvr-bounce-to-bottom">Login</button>
+                    <button *ngIf="_authService.isLoggedIn()" [routerLink]="['/Dashboard']" class="hvr-shutter-out-vertical">Dashboard</button>
+                    <button *ngIf="_authService.isLoggedIn()" [routerLink]="['/Profile']" class="nile hvr-bounce-to-bottom">Profile</button>
+                </div>
+            </div>
+            <!-- end content -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="technologies">
+                <div class="row">
+                  <div class="col-sm-4" *ngFor="let t of staggeringTechnologies,let i=index">
+                      <div class="tech" [@tech] (@tech.done)="doNext(i+1)">
+                          <h5>{{t.name}}</h5>
+                          <p>{{t.description}}</p>
+                      </div>
+                  </div>
+                </div>
+            </div>
+            <!-- end technologies -->
+        </div>
+    </div>
+  </div>
+  <!-- end container -->
+</div>
+<!-- end home -->

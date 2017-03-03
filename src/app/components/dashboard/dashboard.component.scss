@@ -1,0 +1,56 @@
+.dashboard{
+    height:100vh;
+    position: relative;
+    background-image:url('assets/sky-night-space-galaxy.jpeg');
+    background-size:100% 100%;
+    .overlay{
+        background-color:rgba(0, 0, 0, 0.4);
+    }
+    .dashboard-wrapper{
+        position: absolute;
+        top:40vh;
+        left:50%;
+        transform: translate(-50%,-50%);
+        text-align:center;
+        .brand-img{
+            margin:40px 0;
+            span{
+                font-size:45px;
+                border:4px solid #fff;
+                color:#fff;
+                border-radius:50%;
+                padding:15px 20px;
+            }
+            img{
+                width:80px;
+                height:80px;
+            }
+        }
+        .dashboard-details{
+            background-color:rgba(0,0,0,0.2);
+            padding:50px;
+            text-align: center;
+            border-radius: 3px;
+            box-shadow: 1px 5px 5px rgba(0,0,0,0.2);
+            h4{
+                color:#fff;
+                &:after{
+                    content: "";
+                    height: 1px;
+                    width: 70px;
+                    margin: 9px auto 28px;
+                    display: block;
+                    background-color:#404040;
+                }
+            }
+            p{
+                color:#b3b3b3;
+                span{
+                    color: #848282;
+                    font-size: 14px;
+                    font-weight: 100;
+                }
+            }
+        }
+    }
+}

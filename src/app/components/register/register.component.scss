@@ -1,0 +1,96 @@
+$error-color:#E41655;
+.register{
+    height:100vh;
+    position: relative;
+    background-image:url('assets/sky-night-space-galaxy.jpeg');
+    background-size:100% 100%;
+    .overlay{
+        background-color:rgba(0, 0, 0, 0.4);
+    }
+    .form-wrapper{
+        position: absolute;
+        top:47vh;
+        left:50%;
+        transform: translate(-50%,-50%);
+        text-align:center;
+        .brand-img{
+            margin:40px 0;
+            span{
+                font-size:45px;
+                border:4px solid #fff;
+                color:#fff;
+                border-radius:50%;
+                padding:15px 20px;
+            }
+            img{
+                width:80px;
+                height:80px;
+            }
+        }
+        form{
+            .input-box{
+                    position: relative;
+                    text-align: left;
+                i{
+                    position: absolute;
+                    left: 9px;
+                    transform: translateY(-50%);
+                    top: 50%;
+                    color: #8c8b8b;
+                    font-size:18px;
+                }
+                input{
+                    text-indent: 25px;
+                    background-color: rgba(79, 79, 97, 0.6);
+                    padding: 10px;
+                    display: inline-block;
+                    border: none;
+                    outline: none;
+                    margin: 7px 0;
+                    border-radius: 3px;
+                    width:265px;
+                    font-size:14px;
+                    color:#a7a4a4;
+                    &::-webkit-input-placeholder{
+                        font-size:14px;
+                    }
+                }
+                span{color:transparent}
+            }
+            .error-message{
+                text-align: left;
+                p{
+                    color:$error-color;
+                    margin:0;
+                    i{
+                        font-size:9px;
+                    }
+                }
+            }
+            .register-btn{
+                text-align:right;
+                margin:6px 0;
+                input{
+                        background-color: $error-color;
+                        background-color:#007d96;
+                        outline: none;
+                        border: none;
+                        padding: 7px 20px;
+                        color: #fff;
+                        border-radius:3px;
+                        font-size:14px;
+                        font-weight:500;
+                        margin-right:11px;
+                        cursor:pointer;
+                }
+            }
+        }
+    }
+}
+.ng-touched.ng-invalid + span{
+    color:$error-color !important;
+}
+.error-star{
+    color:$error-color !important;
+}
+

@@ -1,0 +1,53 @@
+
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+
+@font-face{
+  font-family: 'MEANWebFont';
+	src: url('assets/fonts/GothamRounded-Bold.otf');
+    src: url('assets/fonts/GothamRoundedBold_21016.ttf');
+    src: url('assets/fonts/GothamRounded-Book.otf');
+    src: url('assets/fonts/GothamRoundedBook_21018.ttf');
+    src: url('assets/fonts/GothamRounded-Light.otf');
+    src: url('assets/fonts/GothamRoundedLight_21020.ttf');
+    src: url('assets/fonts/GothamRounded-Medium.otf');
+    src: url('assets/fonts/GothamRoundedMedium_21022.ttf');
+}
+html,body{
+    font-family: 'MEANWebFont';
+}
+button, input, optgroup, select, textarea{
+    font-family: 'MEANWebFont';
+}
+$snack-bar-color:rgba(5, 5, 12, 0.9);
+$main-color:#48a0b2;
+  .overlay{
+        position: absolute;
+        top:0;
+        left:0;
+        height:100%;
+        width:100%;
+        background-color:rgba(0,0,0,0.2);
+    }
+    .background-img{
+        height:100%;
+        width:100%;
+        position: absolute;
+        top:0;
+        left:0;
+        -webkit-filter: blur(2px);
+        -moz-filter: blur(2px);
+        -o-filter: blur(2px);
+        -ms-filter: blur(2px);
+        filter: blur(2px);
+    }
+     p.stack-bar-components{
+        overflow:hidden;
+        margin:0;
+        color:#989898;
+        .left-msg{float:left; }
+        .right-icon{float:right;}
+     }
+    .snack-background{
+        background:$snack-bar-color !important;
+    }

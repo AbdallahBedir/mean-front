@@ -1,0 +1,46 @@
+<div class="my-app">
+  <nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+              <ul style="text-align:left">
+                  <li>
+                    <a [routerLink]="['Home']">
+                      <img src="assets/meanlogo.png" alt="MEAN">
+                    </a>
+                  </li>
+                  <li>
+                    <a [routerLink]="['Home']" [routerLinkActive]="['active-link']">Home</a>
+                  </li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <ul style="text-align:right">
+                  <li *ngIf="_authService.isLoggedIn()">
+                      <a [routerLink]="['/Dashboard']" [routerLinkActive]="['active-link']">Dashboard</a>
+                  </li>
+                  <li [hidden]="_authService.isLoggedIn()">
+                      <a [routerLink]="['/Login']" [routerLinkActive]="['active-link']">Login</a>
+                  </li>
+                  <li [hidden]="_authService.isLoggedIn()">
+                      <a [routerLink]="['/Register']" [routerLinkActive]="['active-link']">Register</a>
+                  </li>
+                  <li *ngIf="_authService.isLoggedIn()">
+                      <a [routerLink]="['/Profile']" [routerLinkActive]="['active-link']">Profile</a>
+                  </li>
+                  <li *ngIf="_authService.isLoggedIn()">
+                      <a (click)="logout()">logout</a>
+                  </li>
+              </ul>
+            </div>
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+  </nav>
+  <!-- end nav -->
+
+  <router-outlet></router-outlet>
+
+</div>
+<!-- end my-app -->

@@ -1,0 +1,23 @@
+<div class="profile">
+  <div class="background-img">
+  <div class='overlay'></div>
+  </div>
+  <div class="container">
+      <div class="profile-wrapper" [@profileWrapper]>
+          <div class="brand-img">
+            <img src="assets/meanlogo.png" alt="MEAN">
+            <!--<span>M</span>-->
+          </div>
+          <div class="profile-details">
+                <h4>{{user?.name || user?.username}}</h4>
+            <p>
+                <span>Username</span> : {{user?.username}}
+            </p>
+            <p>
+                <span>Email</span> : {{user?.email}}
+            </p>            
+          </div>
+      </div>
+      <!-- end form-wrapper -->
+  </div>
+</div>

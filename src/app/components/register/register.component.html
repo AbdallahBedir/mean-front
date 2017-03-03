@@ -1,0 +1,54 @@
+<div class="register">
+  <div class="background-img">
+  <div class='overlay'></div>
+  </div>
+  <div class="container">
+      <div class="form-wrapper" [@formWrapper]>
+          <div class="brand-img">
+            <img src="assets/meanlogo.png" alt="MEAN">
+            <!--<span>M</span>-->
+          </div>
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)">
+                <div class="input-box">
+                    <i class="material-icons">assignment_ind</i>
+                    <input type="text" name="name" placeholder="Name" [formControl]="name">
+                </div>
+                <div class="input-box">
+                    <i class="material-icons">mail_outline</i>
+                    <input type="email" name="email" placeholder="Email" [formControl]="email">
+                    <span [ngClass]="{'error-star':invalidForm && email.invalid}">*</span>
+                </div>
+                <div class="input-box">
+                    <i class="material-icons">account_box</i>
+                    <input type="text" name="username" placeholder="Username" [formControl]="username">
+                    <span [ngClass]="{'error-star':invalidForm && username.invalid}">*</span>
+                </div>
+                <div class="input-box">
+                    <i class="material-icons">lock</i>
+                    <input type="password" name="password" placeholder="Password" [formControl]="password">
+                    <span [ngClass]="{'error-star':invalidForm && password.invalid}">*</span>
+                </div>
+                <!-- **************** Error messages ****************** -->
+                <div class="error-message">
+                    <div *ngIf="invalidForm && registerForm.invalid">
+                        <p><i class="material-icons">fiber_manual_record</i> 
+                        Please fill in the required fields</p>
+                    </div>
+                    <div *ngIf="email.hasError('RegMisMatch') && email.dirty">
+                        <p><i class="material-icons">fiber_manual_record</i> 
+                        Not valid email</p>
+                    </div>
+                    <div *ngIf="username.hasError('minlength') && username.dirty">
+                        <p><i class="material-icons">fiber_manual_record</i> 
+                        Username is too short</p>
+                    </div>
+                </div>
+                <!-- **************** End Error messages ****************** -->
+                <div class="register-btn">
+                    <input type="submit" value="Register" name="register">
+                </div>
+          </form>
+      </div>
+      <!-- end form-wrapper -->
+  </div>
+</div>
